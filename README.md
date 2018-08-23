@@ -1,2 +1,2 @@
 # create-cmsToken
-Create cmsToken.
+あくまで備忘録です
