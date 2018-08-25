@@ -1,6 +1,6 @@
 from linepy import *
 import requests, json
-host = 'https://gwk.line.naver.jp'
+HOST = 'https://gwk.line.naver.jp'
 LA = "BIZIOS\t1.7.5\tiOS\t10.2"
 udidHash = ""
 header = {
@@ -15,5 +15,5 @@ channel_token = line.channel.approveChannelAndIssueChannelToken('1526709289').ch
 
 endpoint = '/plc/api/core/auth/cmsToken'
 payload = {"channelAccessToken": channel_token, "udidHash": udidHash}
-res = requests.post(host + endpoint, data = json.dumps(payload), headers = header)
+res = requests.post(HOST + endpoint, data=json.dumps(payload), headers=header)
 print(res.json()['accessToken'])
