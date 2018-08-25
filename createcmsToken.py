@@ -4,11 +4,11 @@ host = 'https://gwk.line.naver.jp'
 LA = "BIZIOS\t1.7.5\tiOS\t10.2"
 udidHash = ""
 header = {
-    'Accept':"application/json",
-    "x-lal":"ja-JP_JP",
-    "X-LHM":'POST',
-    "X-LPV":'1',
-    'X-Line-Application':LA
+    'Accept': "application/json",
+    "x-lal": "ja-JP_JP",
+    "X-LHM": 'POST',
+    "X-LPV": '1',
+    'X-Line-Application': LA
 }
 line = LINE()
 channel_token = line.channel.approveChannelAndIssueChannelToken('1526709289').channelAccessToken
