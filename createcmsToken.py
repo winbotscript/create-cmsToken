@@ -6,15 +6,14 @@ udidHash = ""
 header = {
     'Accept':"application/json",
     "x-lal":"ja-JP_JP",
-    "X-LHM":'GET',
+    "X-LHM":'POST',
     "X-LPV":'1',
     'X-Line-Application':LA
 }
 line = LINE()
-ch = line.channel.approveChannelAndIssueChannelToken('1526709289')
+channel_token = line.channel.approveChannelAndIssueChannelToken('1526709289').channelAccessToken
 
-header.update({'X-LHM':'POST'})
 endpoint = '/plc/api/core/auth/cmsToken'
-payload = {"channelAccessToken":ch.channelAccessToken,"udidHash":udidHash}
-res = requests.post(host+endpoint, data=json.dumps(payload), headers=header)
+payload = {"channelAccessToken": channel_token, "udidHash": udidHash}
+res = requests.post(host + endpoint, data = json.dumps(payload), headers=header)
 print(res.json()['accessToken'])
