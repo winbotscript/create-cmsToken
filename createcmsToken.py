@@ -15,5 +15,5 @@ channel_token = line.channel.approveChannelAndIssueChannelToken('1526709289').ch
 
 endpoint = '/plc/api/core/auth/cmsToken'
 payload = {"channelAccessToken": channel_token, "udidHash": udidHash}
-res = requests.post(host + endpoint, data = json.dumps(payload), headers=header)
+res = requests.post(host + endpoint, data = json.dumps(payload), headers = header)
 print(res.json()['accessToken'])
